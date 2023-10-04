@@ -11,8 +11,14 @@ public class StringUtils {
 
     public static boolean isPositiveNumber(String str) {
 
+        if (str == null) {
+            return false;
+        }
+
         String[] chars = str.split("");
-        if (chars[0].equals("0")) return false;
+        if (chars[0].equals("0")) {
+            return false;
+        }
 
         if (NumberUtils.toDouble(str) > 0) {
             return true;
